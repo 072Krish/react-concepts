@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eventify | Event Management</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+scroll-behavior:smooth;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+.hero{
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1501281668745-f7f57925c3b4");
+background-size:cover;
+background-position:center;
+height:95vh;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
+}
+
+.hero h1{
+font-size:60px;
+font-weight:bold;
+}
+
+.section-title{
+font-weight:bold;
+margin-bottom:40px;
+}
+
+.card{
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.gallery img{
+height:250px;
+object-fit:cover;
+border-radius:10px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+footer{
+background:#212529;
+color:white;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container">
+
+<a class="navbar-brand fw-bold">White Orchid</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="#booking">Booking</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+<div>
+
+<h1>Make Every Event Legendary</h1>
+
+<p class="lead mt-3">
+From luxury weddings to electrifying concerts,
+we turn your dreams into unforgettable experiences.
+</p>
+
+<a href="#events" class="btn btn-primary btn-lg mt-3">Explore Events</a>
+
+</div>
+
+</section>
+
+<!-- EVENTS -->
+
+<section id="events" class="container py-5">
+
+<h2 class="text-center section-title">Our Events</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552" class="card-img-top">
+
+<div class="card-body">
+
+<h5 class="card-title">Luxury Weddings</h5>
+
+<p class="card-text">
+Elegant decorations, perfect venues, and unforgettable moments.
+We craft dream weddings filled with magic and romance.
+</p>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1506157786151-b8491531f063" class="card-img-top">
+
+<div class="card-body">
+
+<h5 class="card-title">Music Concerts</h5>
+
+<p class="card-text">
+Massive stages, powerful lighting and energetic crowds.
+Experience the thrill of world-class concerts.
+</p>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1551817958-20204b4d1b5e" class="card-img-top">
+
+<div class="card-body">
+
+<h5 class="card-title">Corporate Events</h5>
+
+<p class="card-text">
+Professional conferences, seminars and product launches
+executed with precision and elegance.
+</p>
+
+</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="bg-light py-5">
+
+<div class="container">
+
+<h2 class="text-center section-title">Why Choose Eventify</h2>
+
+<div class="row text-center">
+
+<div class="col-md-4">
+
+<h4>🎯 Creative Planning</h4>
+
+<p>
+Our expert planners design unique experiences that leave
+a lasting impression on every guest.
+</p>
+
+</div>
+
+<div class="col-md-4">
+
+<h4>⚡ Perfect Execution</h4>
+
+<p>
+From lighting to sound to decorations,
+every detail is executed flawlessly.
+</p>
+
+</div>
+
+<div class="col-md-4">
+
+<h4>🌍 Premium Venues</h4>
+
+<p>
+We collaborate with the best venues and artists
+to create extraordinary events.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery" class="container py-5">
+
+<h2 class="text-center section-title">Event Gallery</h2>
+
+<div class="row g-4 gallery">
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30" class="img-fluid">
+</div>
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3" class="img-fluid">
+</div>
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592" class="img-fluid">
+</div>
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1515169067865-5387ec356754" class="img-fluid">
+</div>
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329" class="img-fluid">
+</div>
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1511578314322-379afb476865" class="img-fluid">
+</div>
+
+</div>
+
+</section>
+
+<!-- BOOKING -->
+
+<section id="booking" class="bg-light py-5">
+
+<div class="container">
+
+<h2 class="text-center section-title">Book Your Event</h2>
+
+<form>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<input type="text" class="form-control" placeholder="Full Name">
+</div>
+
+<div class="col-md-6 mb-3">
+<input type="email" class="form-control" placeholder="Email">
+</div>
+
+</div>
+
+<div class="mb-3">
+
+<select class="form-select">
+
+<option>Select Event Type</option>
+<option>Wedding</option>
+<option>Concert</option>
+<option>Corporate Event</option>
+
+</select>
+
+</div>
+
+<div class="mb-3">
+
+<input type="date" class="form-control">
+
+</div>
+
+<div class="text-center">
+
+<button class="btn btn-primary px-5">Submit Booking</button>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="container py-5">
+
+<h2 class="text-center section-title">Contact Us</h2>
+
+<form>
+
+<div class="mb-3">
+<input type="text" class="form-control" placeholder="Your Name">
+</div>
+
+<div class="mb-3">
+<input type="email" class="form-control" placeholder="Your Email">
+</div>
+
+<div class="mb-3">
+<textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+</div>
+
+<div class="text-center">
+<button class="btn btn-success px-5">Send Message</button>
+</div>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="text-center p-4">
+
+<p>© 2026 White Orchid | All Rights Reserved </p>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

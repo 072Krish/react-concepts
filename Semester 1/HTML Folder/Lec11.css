@@ -1,0 +1,37 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #74ebd5, #ACB6E5);
+  color: white;
+  padding: 20px;
+}
+
+.absolute {
+  font-size: 20px;
+}
+
+
+
+.relative-rem {
+  font-size: 2rem;  
+}
+
+.percent {
+  width: 80%;     
+  background: rgba(0,0,0,0.2);
+}
+
+.viewport {
+  font-size: 5vw; 
+}

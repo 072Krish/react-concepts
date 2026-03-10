@@ -1,0 +1,65 @@
+* {
+    padding-left: 15px;
+    margin-bottom: 10px;
+
+}
+body{
+    background-color: orange;
+}
+.one{
+    border-radius: 15px;
+    height: 95vh;
+    width: 40vw;
+    margin: auto;
+    background-color: white;
+    padding-top: 40px;
+}
+div {
+    margin-top: 50px;
+    padding-top: 10px;
+}
+.two{
+    text-align: center;
+    font-size: 40px;
+}
+p{
+    margin-top: 10px;
+    font-size: 18px;
+    color: gray;
+}
+label{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+input{
+    width: 40%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-left: 15px;
+}
+.three{
+    margin-left: 190px;
+}
+.four{
+    margin-left: 270px;
+}
+select{
+    width: 43%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-left: 15px;
+}   
+.first{
+    margin-left: 160px;
+}
+.five{
+    background-color: rgb(84, 177, 102);
+    color: white;
+    margin: 40px 150px 0 150px;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 20px;
+}

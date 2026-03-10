@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div{
+    border: 2px solid lightgray;
+    width: 300px;
+    height: 450px;
+    margin: auto;
+    margin-top: 100px;
+    padding-left: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+    
+}
+
+.doler{
+    color: black;
+    font-size: 25px;
+}
+
+.small{
+    font-size: 15px;
+}
+
+.cut{
+    text-decoration: line-through;
+}
+
+h3{
+    color:gray;
+    padding-top: 10px;
+}
+
+p{
+    color:gray;
+    padding-bottom: 20px;
+}
+
+span{
+    color:gray;
+}
+
+i.blue{
+    color:blue;
+    
+}
+
+button{
+    width: 250px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 15px;
+    cursor: pointer;
+}
