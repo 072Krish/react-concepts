@@ -1,79 +1,192 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-class Booking {
-private:
-    string customerName, movieName;
-    int tickets;
-    float price, total;
-
+class Account {
 public:
-    static int totalBookings;
-    static int totalSeatsBooked;
+    int accNo;
+    string name;
+    double balance;
+    int transactionCount;
 
-    Booking() {
-        customerName = "";
-        movieName = "";
-        tickets = 0;
-        price = 0;
-        total = 0;
+    // Constructor
+    Account(int a, string n, double b) {
+        accNo = a;
+        name = n;
+        balance = b;
+        transactionCount = 0;
     }
 
-    void inputDetails() {
-        cout << "Enter Customer Name: ";
-        cin >> customerName;
-
-        cout << "Select Movie:\n1. Avengers\n2. Leo\n3. Jawan\nEnter Choice: ";
-        int choice;
-        cin >> choice;
-
-        if(choice==1){ movieName="Avengers"; price=200; }
-        else if(choice==2){ movieName="Leo"; price=180; }
-        else { movieName="Jawan"; price=150; }
-
-        cout << "Enter Number of Tickets: ";
-        cin >> tickets;
-
-        totalBookings++;
-        totalSeatsBooked += tickets;
+    // Deposit Function
+    void deposit(double amount) {
+        if (amount <= 0) {
+            cout << "Invalid deposit amount!\n";
+            return;
+        }
+        balance += amount;
+        transactionCount++;
+        cout << "Deposit successful!\n";
     }
 
-    void calculateTotal() {
-        total = tickets * price;
-        if(tickets >= 5) total *= 0.9;
+    // Withdraw Function
+    void withdraw(double amount) {
+        if (amount <= 0) {
+            cout << "Invalid withdrawal amount!\n";
+            return;
+        }
+        if (balance - amount < 500) {
+            cout << "Minimum balance of ₹500 must be maintained!\n";
+            return;
+        }
+        balance -= amount;
+        transactionCount++;
+        cout << "Withdrawal successful!\n";
     }
 
-    void displayBooking() {
-        calculateTotal();
-        cout << "\n------ Booking Summary ------\n";
-        cout << "Customer Name: " << customerName << endl;
-        cout << "Movie: " << movieName << endl;
-        cout << "Tickets: " << tickets << endl;
-        if(tickets >= 5) cout << "Discount Applied: 10%\n";
-        cout << "Total Amount: " << total << endl;
-        cout << "-----------------------------\n";
-    }
-
-    static void showStatistics() {
-        cout << "\n===== Booking Statistics =====\n";
-        cout << "Total Bookings: " << totalBookings << endl;
-        cout << "Total Seats Booked: " << totalSeatsBooked << endl;
-        cout << "==============================\n";
+    // Display Function
+    void display() {
+        cout << "\nAccount No: " << accNo;
+        cout << "\nName: " << name;
+        cout << "\nBalance: ₹" << balance;
+        cout << "\nTransactions: " << transactionCount << endl;
     }
 };
 
-int Booking::totalBookings = 0;
-int Booking::totalSeatsBooked = 0;
+// Function to check duplicate account number
+bool isDuplicate(vector<Account> &accounts, int accNo) {
+    for (auto &acc : accounts) {
+        if (acc.accNo == accNo)
+            return true;
+    }
+    return false;
+}
+
+// Function to find account
+int findAccount(vector<Account> &accounts, int accNo) {
+    for (int i = 0; i < accounts.size(); i++) {
+        if (accounts[i].accNo == accNo)
+            return i;
+    }
+    return -1;
+}
 
 int main() {
-    Booking b1, b2;
+    vector<Account> accounts;
+    int choice;
 
-    b1.inputDetails();
-    b2.inputDetails();
+    do {
+        cout << "\n===== Banking System Menu =====\n";
+        cout << "1. Create Account\n";
+        cout << "2. Deposit Money\n";
+        cout << "3. Withdraw Money\n";
+        cout << "4. Display Account\n";
+        cout << "5. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
 
-    b1.displayBooking();
-    b2.displayBooking();
+        switch (choice) {
+        case 1: {
+            int accNo;
+            string name;
+            double balance;
 
-    Booking::showStatistics();
+            cout << "Enter Account Number: ";
+            cin >> accNo;
+
+            if (isDuplicate(accounts, accNo)) {
+                cout << "Account number already exists!\n";
+                break;
+            }
+
+            cout << "Enter Name: ";
+            cin >> name;
+
+            cout << "Enter Initial Balance: ";
+            cin >> balance;
+
+            if (balance < 500) {
+                cout << "Minimum balance should be ₹500!\n";
+                break;
+            }
+
+            accounts.push_back(Account(accNo, name, balance));
+            cout << "Account created successfully!\n";
+            break;
+        }
+
+        case 2: {
+            int accNo;
+            double amount;
+            cout << "Enter Account Number: ";
+            cin >> accNo;
+
+            int index = findAccount(accounts, accNo);
+            if (index == -1) {
+                cout << "Account not found!\n";
+                break;
+            }
+
+            cout << "Enter amount to deposit: ";
+            cin >> amount;
+
+            accounts[index].deposit(amount);
+            break;
+        }
+
+        case 3: {
+            int accNo;
+            double amount;
+            cout << "Enter Account Number: ";
+            cin >> accNo;
+
+            int index = findAccount(accounts, accNo);
+            if (index == -1) {
+                cout << "Account not found!\n";
+                break;
+            }
+
+            cout << "Enter amount to withdraw: ";
+            cin >> amount;
+
+            accounts[index].withdraw(amount);
+            break;
+        }
+
+        case 4: {
+            int accNo;
+            cout << "Enter Account Number: ";
+            cin >> accNo;
+
+            int index = findAccount(accounts, accNo);
+            if (index == -1) {
+                cout << "Account not found!\n";
+                break;
+            }
+
+            accounts[index].display();
+            break;
+        }
+
+        case 5:
+            cout << "Exiting system...\n";
+            break;
+
+        default:
+            cout << "Invalid choice!\n";
+        }
+
+    } while (choice != 5);
+
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+

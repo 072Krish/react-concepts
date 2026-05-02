@@ -88,17 +88,57 @@
 //     return 0;
 //  }
 
-#include<iostream>
+// #include<iostream>
+// using namespace std;
+//  void abc(int &a) // pass by reference
+//  {
+//     a=a+5;
+//     cout<<"inside function"<<a<<endl;
+//  }
+//  int main(){
+//     int a=7;
+//     cout<<"value before function call"<<a<<endl;
+//     abc(a);
+//     cout<<"value after function call"<<a<<endl;
+//     return 0;
+//  }
+
+#include <iostream>
 using namespace std;
- void abc(int &a) // pass by reference
- {
-    a=a+5;
-    cout<<"inside function"<<a<<endl;
- }
- int main(){
-    int a=7;
-    cout<<"value before function call"<<a<<endl;
-    abc(a);
-    cout<<"value after function call"<<a<<endl;
+
+class Base
+{
+public:
+    int a = 10;      // public
+
+private:
+    int b = 20;      // private
+
+protected:
+    int c = 30;      // protected
+};
+
+class Child : public Base
+{
+public:
+    void show()
+    {
+        cout << a << endl; // allowed
+        // cout << b;      // not allowed
+        cout << c << endl; // allowed
+    }
+};
+
+int main()
+{
+    Base obj;
+
+    cout << obj.a << endl; // allowed
+    // cout << obj.b;      // not allowed
+    // cout << obj.c;      // not allowed
+
+    Child ch;
+    ch.show();
+
     return 0;
- }
+}
